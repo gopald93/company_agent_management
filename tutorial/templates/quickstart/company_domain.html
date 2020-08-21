@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row mt-1">
+  <div class="col-12">
+<div class="card">
+  <h5 class="card-header">Step 1 - Enter the domain address</h5>
+  <div class="card-body">
+      <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <button  class="btn btn-primary"type="submit">Next</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+  <h5 class="card-header">Step 2 - Set up your domain</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">Login to your domain administration panel and find DNS records management panel for the domain: abcdefgh.com</p>
+    <p class="card-text">Then add new records</p>
+    <div class="card-text">
+    	<table class="table" >
+  		<thead>
+    	<tr>
+     		<th scope="row">Type</th>
+      		<th scope="row">Name</th>
+      		<th scope="row">Value</th>
+    	</tr>
+  		</thead>
+  		<tbody>
+	    <tr>
+	      <td>Mark</td>	
+	      <td>Mark</td>
+	      <td>Otto</td>
+	      
+	    </tr>
+	    <tr>
+    	</tbody>
+		</table>
+	</div>		
+    <p class="card-text">		</p>
+    <p class="card-text">CNAME	www.geeksforgeeks.org	dashboard-proxy.kommunicate.io	 Copy</p>
+    <p class="card-text">If you have any problems with the setup, please contact your domain admin support team. They will be able to help you out</p>
+    <a href="{% url 'company_url' %}" class="btn btn-primary">i'hv done</a>
+  </div>
+</div>
+{% endblock %}

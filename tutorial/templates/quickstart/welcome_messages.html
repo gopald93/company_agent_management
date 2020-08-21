@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row mt-4">
+      <div class="col-12">
+        {{ form.collect_email_id_from_anonymous_users|as_crispy_field }}
+      </div>
+      </div>
+      <div class="row mt-4">
+      <div class="col-12">
+        {{ form.show_welcome_message_to_users|as_crispy_field }}
+      </div>
+    </div>
+    <div class="row mt-4">
+    <div class="col-12">	
+    {% for value, text in form.default_language.field.choices %}
+    		<input id="id_default_language_{{ forloop.counter0 }}" name="{{ form.default_language.name }}" type="checkbox" value="{{ value }}"{% if value in checked_my_field %} checked="checked"{% endif %}>
+    		<button type="button" class="btn btn-primary">{{ text }}</button>
+	{% endfor %}
+    </div>
+    </div>
+    <div class="row mt-4">
+    <div class="col-12">
+    {{ form.default_welcome_message|as_crispy_field }}
+    </div>
+    </div>
+    <div class="row mt-4">
+    <div class="col-12">
+    <button type="submit" class="btn btn-success">Save</button>
+    </div>
+    </div>
+  </form>
+{% endblock %}
